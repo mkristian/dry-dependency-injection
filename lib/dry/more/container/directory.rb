@@ -16,7 +16,7 @@ module Dry
             instance
           end
 
-          def create(key, &block)
+          def create(_key, &_block)
             raise 'not implemented'
           end
         end

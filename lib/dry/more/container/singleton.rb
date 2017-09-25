@@ -43,7 +43,7 @@ module Dry
             @_mutex = Concurrent::Synchronization::Lock.new
           end
 
-          def call(container, key, item, options)
+          def call(container, key, item, _options)
             key = key.to_s.dup.freeze
             @_mutex.synchronize do
               if container.key?(key)
@@ -55,7 +55,7 @@ module Dry
           end
         end
 
-        def orig_register(key, item = nil, options = {}, &block)
+        def orig_register(key, item = nil, options = {}, &_block)
           if block_given?
             raise Dry::Container::Error, 'can not register block'
           else
