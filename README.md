@@ -15,6 +15,17 @@ more containers derived from dry-container
 [![Coverage Status](https://coveralls.io/repos/github/mkristian/dry-more-container/badge.svg?branch=master)][coveralls]
 [![Issue Count](https://codeclimate.com/github/mkristian/dry-more-container/badges/issue_count.svg)][codeissues]
 
+## Rubygems/Bundler
+
+```
+gem install dry-more-container
+```
+
+or Gemfile:
+```
+gem 'dry-more-container'
+```
+
 ## Singleton Container with Dependency Injection
 
 The idea is to have components or services which all are using dry-auto_inject to inject their dependencies. The `Dry::More::Container::Singleton` is dry-container with a special resovler. You need register the service/component class itself (not the an instance of it):

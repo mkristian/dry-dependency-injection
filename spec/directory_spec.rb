@@ -28,19 +28,19 @@ describe Dry::More::Container::Directory do
     end
   end
 
-  class Builder2 < Dry::More::Container::Directory::Builder2
-    include Service[:container]
-
-    def do_build(&block)
-      Proc.new { block.call(@key) }
-    end
-  end
-
-  class Builder < Dry::More::Container::Directory::Builder2
+  class Builder < Dry::More::Container::Directory::Builder
     include Service[:container]
 
     def do_build(&block)
       Component.new(@key, &block)
+    end
+  end
+
+  class Builder2 < Dry::More::Container::Directory::Builder
+    include Service[:container]
+
+    def do_build(&block)
+      Proc.new { block.call(@key) }
     end
   end
 
