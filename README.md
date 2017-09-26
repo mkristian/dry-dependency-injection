@@ -2,7 +2,7 @@
 [travis]: https://travis-ci.org/mkristian/dry-more-container
 [gemnasium]: https://gemnasium.com/mkristian/dry-more-container
 [codeclimate]: https://codeclimate.com/github/mkristian/dry-more-container
-[coveralls]: https://coveralls.io/r/mkristian/dry-more-container
+[coveralls]: https://coveralls.io/github/mkristian/dry-more-container?branch=master
 [codeissues]: https://codeclimate.com/github/mkristian/dry-more-container
 
 # dry-more-container
