@@ -1,1 +1,1 @@
-TestBuilder.new.build('b') { |key| "called #{__FILE__} with '#{key}'" }
+Builder.build('b') { |key| "called #{__FILE__} with '#{key}'" }

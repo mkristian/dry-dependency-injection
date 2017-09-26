@@ -6,18 +6,21 @@ module Dry
 
         class Builder
 
-          def initialize(container:)
+          def initialize(key:, container:)
+            @key = File.basename(key).sub(/.rb$/, '')
             @container = container
           end
 
-          def build(key, &block)
-            instance = create(key, &block)
-            @container.register(key, instance)
+          def build(&block)
+            instance = do_build(&block)
+            @container.register(@key, instance)
             instance
           end
 
-          def create(_key, &_block)
-            raise 'not implemented'
+          def do_build(&_block); raise 'not implemented'; end
+
+          def self.build(key, &block)
+            new(key: key).build(&block)
           end
         end
 
