@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "dry/more/container/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "leafy"
+  spec.name          = "dry-more-container"
   spec.version       = Dry::More::Container::VERSION
   spec.authors       = [""]
   spec.email         = [""]

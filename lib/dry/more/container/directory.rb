@@ -37,8 +37,8 @@ module Dry
               require File.join('.', @config.path, file)
             end
             super(container, key)
-          rescue LoadError
-            raise Dry::Container::Error, "Nothing registered with the key #{key.inspect}"
+          rescue LoadError => e
+            raise Dry::Container::Error, "Nothing registered with the key #{key.inspect}: #{e.message}"
           end
         end
 
