@@ -16,10 +16,14 @@ module Dry
           end
 
           def call
+
+            @_lock.acquire_read_lock
             unless @instance
               @instance = create
             end
             @instance
+          ensure
+            @_lock.release_read_lock
           end
 
           def create
