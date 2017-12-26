@@ -1,0 +1,2 @@
+require_relative 'dependency_injection/importer'
+require_relative 'dependency_injection/singletons'
