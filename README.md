@@ -1,4 +1,4 @@
-[gem]: https://rubygems.org/gems/dry-dependency-injection
+[gem]: https://badge.fury.io/rb/dry-dependency-injection
 [travis]: https://travis-ci.org/mkristian/dry-dependency-injection
 [gemnasium]: https://gemnasium.com/mkristian/dry-dependency-injection
 [codeclimate]: https://codeclimate.com/github/mkristian/dry-dependency-injection
