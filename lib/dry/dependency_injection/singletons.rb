@@ -70,9 +70,7 @@ module Dry
 
       def register_singleton(key, item = nil, options = {}, &block)
         @_lock.synchronize do
-          if @_finalized
-            raise Dry::Container::Error, 'can not register. container already finalized'
-          end
+          check_finalized
         end
         if block_given?
           raise Dry::Container::Error, 'can not register block'
@@ -80,6 +78,12 @@ module Dry
           config.registry.call(_container, key, item, options)
           @_eager << key if options[:eager] || item.kind_of?(Eager)
           self
+        end
+      end
+
+      def check_finalized
+        if @_finalized
+          raise Dry::Container::Error, 'can not register. container already finalized'
         end
       end
 
