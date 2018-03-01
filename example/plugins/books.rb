@@ -1,4 +1,5 @@
-class Second
+# need a plural class to test the inflection from filename to class constant
+class Books
   extend Dry::DependencyInjection::Eager
   include Dependency['registry']
 

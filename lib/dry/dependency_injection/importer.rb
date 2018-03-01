@@ -16,7 +16,7 @@ module Dry
         Dir[File.join(full, prefix, '**', '*.rb')].each do |file|
           require file
           subpath = file.gsub(/#{full}\/|\.rb/, '')
-          class_name = Dry::Core::Inflector.classify(subpath)
+          class_name = Dry::Core::Inflector.camelize(subpath)
           clazz = Dry::Core::Inflector.constantize(class_name)
           if clazz.is_a?(Class)
             key = subpath.gsub('/', '.')

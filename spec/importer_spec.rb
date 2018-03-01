@@ -7,7 +7,7 @@ describe Dry::DependencyInjection::Importer do
     require 'setup'
 
     result = App.new.run
-    expect(result.keys).to match_array ['first', 'second', 'ng.third']
-    expect(result.values.collect{|v| v.sub(/:0.*/, '')}).to match_array ['#<First', '#<Second', '#<Ng::Third']
+    expect(result.keys).to match_array ['books', 'first', 'second', 'ng.third']
+    expect(result.values.collect{|v| v.sub(/:0.*/, '')}).to match_array ['#<Books', '#<First', '#<Second', '#<Ng::Third']
   end
 end
