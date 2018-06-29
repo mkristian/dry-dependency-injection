@@ -14,6 +14,7 @@ module Dry
         end
         full = File.expand_path(path)
         Dir[File.join(full, prefix, '**', '*.rb')].each do |file|
+          next if block_given? && !yield(file)
           require file
           subpath = file.gsub(/#{full}\/|\.rb/, '')
           class_name = Dry::Core::Inflector.camelize(subpath)
